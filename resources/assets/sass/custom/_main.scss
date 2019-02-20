@@ -1,0 +1,380 @@
+@import '~bootstrap/scss/bootstrap';
+// Custom Main
+//
+// Add your own styles or override existing ones
+//
+// This file is included last, so you have access
+// to all Bootstrap and OneUI functions/mixins/styles etc
+// --------------------------------------------------
+
+// If you have many custom styles, you can create and import additional files
+// For example you can create _component1.scss and include it as follows:
+// @import 'component1';
+
+* {
+    font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif', 'Black Han Sans', sans-serif;
+}
+
+$main-color-1: #4195e6;
+$main-color-2: #f0f0f1;
+//header------------>
+html {
+    min-width: 1024px;
+}
+body {
+    background-color: $main-color-2;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    background: #fff;
+    font-family: SpoqaHanSans;
+    font-size: 16px;
+    font-weight: bold;
+    nav {
+        background-color: $main-color-1;
+        width: 68px;
+        height: 70px;
+        a {
+            color: #ffffff;
+            display: inline-block;
+            height: 70px;
+            img {
+                width: 28px;
+                height: 28px;
+                top: 21px;
+                left: 21px;
+            }
+            p {
+                top: 23px;
+                left: 71px;
+                display: none;
+            }
+        }
+    }
+    .content_header {
+        width: calc(100% - 68px);
+        height: 70px;
+        top: 0;
+        right: 0;
+        div:first-of-type {
+            width: 200px;
+            height: 70px;
+            padding-left: 20px !important;
+            p {
+                margin: 0;
+                &:first-of-type {
+                    font-size: 20px;
+                    padding-top: 9px;
+                    font-weight: bold;
+                    color: #252525;
+                    line-height: 25px;
+                }
+                &:nth-of-type(2) {
+                    font-size: 16px;
+                    font-weight: normal;
+                    color: #252525;
+                }
+            }
+        }
+        div:nth-of-type(2) {
+            width: 130px;
+            top: 23px;
+            right: 87px;
+            p {
+                font-family: SpoqaHanSans;
+                font-size: 16px;
+                text-align: right;
+                color: #252525;
+                margin: 0;
+            }
+        }
+        div:last-of-type {
+            top: 0;
+            right: 0;
+            a {
+                display: block;
+                border-left: 1px solid #e3e3e7;
+                width: 70px;
+                height: 70px;
+                padding-top: 24px;
+                padding-left: 12px;
+                span {
+                    width: 30px;
+                    height: 18px;
+                    border-radius: 9px;
+                    background-color: #e76969;
+                    padding-left: 0.4em !important;
+                    top: 19px;
+                    right: 12px;
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(md) { //768px
+        // display: none;
+    }
+    @include media-breakpoint-up(lg) { //992px
+        nav {
+            width: 184px;
+            a {
+                img {
+                    left: 35px;
+                }
+                p {
+                    display: block;
+                }
+            }
+        }
+        .content_header {
+            width: calc(100% - 184px);
+        }
+    }
+}
+//footer-------------->
+footer {
+    width: 100%;
+    height: 54px;
+    line-height: 54px;
+    padding-left: 24px;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
+    a {
+        font-family: SpoqaHanSans;
+        font-size: 16px;
+        color: #252525;
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+    div {
+        display: inline-block;
+        margin-right: 20px;
+        font-family: SpoqaHanSans;
+        font-size: 16px;
+        span:nth-of-type(2) {
+            margin-left: 14px;
+        }
+        a:last-of-type {
+            display: -webkit-inline-box;
+            width: 123px;
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            border-radius: 4px;
+            background-color: #4195e6;
+            color: #ffffff;
+            text-indent: 30px;
+            margin-left: 14px;
+        }
+    }
+}
+
+//main_content---------->
+// main {
+//     width: 100%;
+//     margin-top: 70px;
+// }
+
+
+
+// .keyboard {
+//     position: fixed;
+//     width: 100%;
+//     z-index: 1;
+//     bottom: 0;
+//     display: none;
+//     @include media-breakpoint-down(xs) {
+//         display: none;
+//     }
+//     @include media-breakpoint-up(lg) {
+//         padding-bottom: 16px;
+//     }
+//     background-color: #f0f4f7;
+//     padding: 14px 0 24px;
+//     .line {
+//         @include media-breakpoint-up(lg) {
+//             max-width: 1024px;
+//         }
+//         display: flex;
+//         margin: auto;
+//         max-width: 768px;
+//         &:not(:first-child) {
+//             margin-top: 12px;
+//         }
+//         &:has([data-func="enter"]) {
+//             width: 165%;
+//             color: #fff;
+//         }
+//         &:has([data-func="space"]) {
+//             width: 700%;
+//         }
+//         .keycap {
+//             display: flex;
+//             height: 54px;
+//             &[data-size="0.5"] {
+//                 width: 50%;
+//             }
+//             &[data-size="1"] {
+//                 width: 100%;
+//             }
+//             &[data-size="1.5"] {
+//                 width: 150%;
+//             }
+//             &[data-size="7"] {
+//                 width: 700%;
+//             }
+//             &:first-child {
+//                 margin-left: 6px;
+//             }
+//             &:last-child {
+//                 margin-right: 6px;
+//             }
+//             .key {
+//                 @include media-breakpoint-up(lg) {
+//                     font-size: 30px;
+//                 }
+//                 position: relative;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 width: 100%;
+//                 height: 100%;
+//                 background-color: #fff;
+//                 border-radius: 4px;
+//                 cursor: pointer;
+//                 font-size: 3vw;
+//                 margin: 0 5px;
+//                 &[data-func] {
+//                     @include media-breakpoint-up(lg) {
+//                         font-size: 20px;
+//                     }
+//                     font-size: 2vw;
+//                 }
+//                 &.show-etc[data-etc]:before,
+//                 &.show-etc-shift[data-etc-shift]:before,
+//                 &.show-ko[data-ko]:before,
+//                 &.show-ko-shift[data-ko-shift]:before {
+//                     @include media-breakpoint-up(lg) {
+//                         font-size: 14px;
+//                     }
+//                     position: absolute;
+//                     top: 0;
+//                     right: 7%;
+//                     color: #cfcfd3;
+//                     font-size: 1vw;
+//                 }
+//                 &.show-etc[data-etc]:before {
+//                     content: attr(data-etc);
+//                 }
+//                 &.show-etc-shift[data-etc-shift]:before {
+//                     content: attr(data-etc-shift);
+//                 }
+//                 &.show-ko[data-ko]:before {
+//                     content: attr(data-ko);
+//                 }
+//                 &.show-ko-shift[data-ko-shift]:before {
+//                     content: attr(data-ko-shift);
+//                 }
+//                 &.bg-dark-sky-blue {
+//                     background-color: #4a9dec;
+//                 }
+//                 &.bg-pale-grey {
+//                     background-color: #e3eaef;
+//                 }
+//                 .ft-dark-sky-blue {
+//                     color: #4a9dec;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+
+.flex-header {
+    border-radius: 5px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+    margin-top: 70px;
+    .flex-item {
+        flex: 1;
+        height: 126px;
+        margin: 30px 10px 20px 10px;
+        padding: 20px;
+        color: #000;
+        box-shadow: 0 0 15px 0 rgba(154, 161, 171, 0.15);
+        border-radius: 6px;
+        text-align: center;
+        border-radius: 5px;
+        background: #fff;
+    }
+}
+
+.flex-contents {
+    // height: 754px;
+    // border: 2px solid red;
+    background-color: #f0f0f1;
+    padding: 20px 32px;
+    display: flex;
+    .box1 {
+        flex:7;
+        height: 676px;
+        margin-right: 20px;
+        background-color: skyblue;
+        border-radius: 6px;
+    }
+    .box2 {
+        flex: 5;
+        height: 676px;
+        display: flex;
+        flex-direction: column;
+        div {
+            // flex:1;
+            border: 1px solid #fff;
+            height: 328px;
+            background-color: tomato;
+            border-radius: 6px;
+            &:first-child {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width:1439px) {
+    .flex-contents {
+        flex-direction: column;
+        .box1 {
+            margin-right: 0;
+            height: 328px;
+        }
+        .box2 {
+            flex: 5;
+            height: 676px;
+            display: flex;
+            flex-direction: row;
+            div {
+                flex:1;
+                border: 1px solid #fff;
+                height: 328px;
+                background-color: tomato;
+                margin-top: 20px;
+                &:first-child {
+                    margin-right: 10px;
+                }
+                &:nth-of-type(2) {
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
